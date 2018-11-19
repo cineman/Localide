@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         self.mapView.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    func didTapMapView(withTapGesture gesture: UITapGestureRecognizer) {
+    @objc func didTapMapView(withTapGesture gesture: UITapGestureRecognizer) {
         let gestureLocation = gesture.location(in: self.mapView)
         let gestureCoordinate = self.mapView.convert(gestureLocation, toCoordinateFrom: self.mapView)
         self.handleLocalideAction(withCoordinate: gestureCoordinate)
